@@ -1,0 +1,63 @@
+#####################--------------------------                        REFRENCES                            ----------------------------########################
+#####################--------------------------              1)Error TYPE (ERT041)                          ----------------------------########################
+#####################--------------------------              2)LookupBookingByMobile Types (LBM0671)        ----------------------------########################
+#####################--------------------------              3)MutationResponse TYPE (MTU0546)              ----------------------------########################
+
+type Query {
+  lookupBookingByMobile(mobilenumber: String): lookupBookingByMobileResponse
+}
+type Mutation {
+  registerCustomerBooking(
+    firstname: String
+    middlename: String
+    lastname: String
+    emailaddress: String
+    mobilenumber: String
+    source: Int
+    plan:String
+    bookingrefid:ID
+    bookingamount:Int
+    bikemodel:String
+    bikecolor:String
+    deliverybatch:String
+    dealerid:String
+    dealername:String
+    dealeraddress:String
+  ): MutationResponse
+}
+
+###########################  lookupBookingByMobile Types (LBM0671) ###############################
+
+type lookupBookingByMobileResponse {
+  status: Boolean
+  data: CustomerDetails
+  errors: [Error]
+}
+
+type CustomerDetails {
+  id: ID
+  firstname: String
+  middlename: String
+  lastname: String
+  emailaddress: String
+  mobilenumber: String
+}
+
+###########################  lookupBookingByMobile Types (LBM0671) ###############################
+
+###########################  Error TYPE (ERT041) ###############################
+type Error {
+  status: Boolean
+  errorMessage: String
+  errorCode: Int
+}
+###########################  Error TYPE (ERT041) ###############################
+
+###########################  MutationResponse TYPE (MTU0546) ###############################
+type MutationResponse {
+  status: Boolean
+  message: String
+  data: String
+  errors: [Error]
+}
+###########################  MutationResponse TYPE (MTU0546) ###############################
