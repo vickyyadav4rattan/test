@@ -5,4 +5,5 @@ const CUSTOMER_DETAILS = require("./revoltModels/bookingModels").CUSTOMER_DETAIL
 const { logger } = require("./utils");
 //---------------------------------------------------------------------------------
 const server = new GraphQLServer({ typeDefs: "./schema.graphql", resolvers })
+
 server.start(Config.GraphQlserverOptions, ({ port }) => logger('Server is running on localhost :', port, "separator"))
