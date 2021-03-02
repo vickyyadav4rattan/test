@@ -26,7 +26,7 @@ const CONFIG = {
     },
     //Graphql Server Options (GQL9973)
     GraphQlserverOptions: {
-        port: process.env.PORT,
+        port: $PORT||process.env.PORT,
 //         endpoint: '/graphql',
 //         subscriptions: '/subscriptions',
 //         playground: "/playground",
